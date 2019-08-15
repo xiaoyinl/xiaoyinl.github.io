@@ -13,7 +13,7 @@
         The Steam Service is located at C:\Program Files (x86)\Common Files\Steam\SteamService.exe, and other Steam files are located at C:\Program Files (x86)\Steam. I noticed that when Steam service is starting, it copies C:\Program Files (x86)\Steam\bin\SteamService.dll to C:\Program Files (x86)\Common Files\Steam\SteamService.dll.
     </p>
     <p>
-        <img src="SteamService.dll_writefile.png" alt="SteamService.dll WriteFile" />
+        <img src="SteamService.dll_writefile.png" alt="SteamService.dll WriteFile" width="288" height="150" />
     </p>
     <p>
         Normally any files under "Program Files" and "Program Files (x86)" are not writable by non-admin users. But Steam explicitly sets DACL to allow all users to have full access to C:\Program Files (x86)\Steam. So I place a malicious DLL at C:\Program Files (x86)\Steam\bin\SteamService.dll, and hope that Steam Service copies my DLL to replace the genuine one. This doesn't work because Steam Service checks file signature before the copy is made.
