@@ -8,7 +8,7 @@
     <h1>Bypassing the Fix for Steam Reg-symlink Privilege Escalation Vulnerability</h1>
     <p style="text-align: center;"><span style="padding-right: 20px;">Xiaoyin Liu</span><span style="padding-left: 20px;">August 16, 2019</span><p>
     <p>
-        Recently a privilege escalation vulnerability in Steam PC client was disclosed on Internet. The original vulnerability write-up was written by Vasily Kravets, and it is available at [1]. It was fixed by Valve on Aug 13. Then I tried to find if the fix can be bypassed. Indeed there's a bypass.
+        Recently a privilege escalation vulnerability in Steam PC client was disclosed on Internet. The original vulnerability write-up was written by Vasily Kravets, and it is available at [1]. It was fixed by Valve on Aug 13. Then I tried to find if the fix can be bypassed. Indeed there's a bypass. This vulnerability is assigned <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-15315">CVE-2019-15315</a>.
     </p>
     <p>
         The Steam Service is located at C:\Program Files (x86)\Common Files\Steam\SteamService.exe, and other Steam files are located at C:\Program Files (x86)\Steam. I noticed that when Steam service is starting, it copies C:\Program Files (x86)\Steam\bin\SteamService.dll to C:\Program Files (x86)\Common Files\Steam\SteamService.dll.
@@ -28,9 +28,11 @@
     <p>Given that, I decided not to report this bypass to Valve, but rather disclose it.</p>
     <h2>Acknowledgements</h2>
     <p>This write-up is inspired by and based on the discovery by Vasily Kravets and Matt Nelson. Thank you for their discovery and write-up!</p>
+    <p>Thank you Kravets for requesting a CVE for this issue!</p>
     <h2>References</h2>
     <ol>
         <li>https://amonitoring.ru/article/steamclient-0day/</li>
+        <li>https://twitter.com/PsiDragon/status/1164260873311068160</li>
     </ol>
 </body>
 </html>
